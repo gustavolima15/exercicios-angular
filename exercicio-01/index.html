@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Div Page</title>
+</head>
+<body>
+    <div id="div1" style="background-color: red;">
+        <h2>Mudando a cor de background do div</h2>
+        <button type="button" onclick="document.getElementById('div1').style.backgroundColor = 'blue';">
+            Trocar para azul!
+        </button>
+        <button id="alterarCorBtn" type="button">
+            Trocar para randomicamente!
+        </button>
+        <button id="alterarCorBtn2" type="button" onclick="alterarCor()">
+            Trocar para randomicamente - event binding inline!
+        </button>
+    </div>
+
+    <script>
+        function alterarCor() {
+            var div = document.getElementById("div1"); 
+            var cor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            div.style.backgroundColor = cor;
+        }
+
+        document.getElementById("alterarCorBtn").addEventListener("click", alterarCor);
+    </script>
+</body>
+</html>
