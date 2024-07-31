@@ -6,7 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1<strong>Exemplo da lâmpada</strong>></h1>
-    <p>Desenvolver uma página HTML que possua dois botões e uma imagem de uma lâmpada que acende e apaga</p>
+    <h1><strong>Exemplo da lâmpada</strong></h1>
+    <p style="font-size: 1.5rem;">Desenvolver uma página HTML que possua dois botões e uma imagem de uma lâmpada que acende e apaga</p>
+    <button onclick="document.getElementById('myImage').src = './pic_bulbon.gif'">Acender</button>
+    <img id="myImage" src="./pic_bulboff.gif" style="width: 7rem;" onclick="check_status()">
+    <button onclick="document.getElementById('myImage').src = './pic_bulboff.gif'">Apagar</button>
+
+    <script>
+        function check_status() {
+            let image = document.getElementById("myImage");
+            if(image.src.match('bulboff')) {
+                alert('Lâmpada Apagada')
+            } else {
+                alert('Lâmpada Acesa')
+            }
+        }
+
+    </script>
 </body>
 </html>
